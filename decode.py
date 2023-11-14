@@ -1,5 +1,5 @@
 # TODO: update
-inst_to_byte = {
+inst_to_binray = {
     ">": "00000000",
     "<": "00000000",
     "+": "00000000",
@@ -13,4 +13,4 @@ inst_to_byte = {
 strings = input()
 
 for instruction in strings:
-    print(inst_to_byte[instruction])
+    print(inst_to_binary[instruction])
