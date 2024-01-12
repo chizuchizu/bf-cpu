@@ -18,4 +18,4 @@
 8. デコーダ
 9. アウトプットの表示
 
-![](../imgs/logic4_annot.png)
+![](../imgs/logic4_anot.png)
