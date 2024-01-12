@@ -18,4 +18,4 @@
 8. デコーダ
 9. アウトプットの表示
 
-![](imgs/logic4_anot.png)
+![](https://github.com/chizuchizu/bf-cpu/blob/main/imgs/logic_4_anot.png?raw=true)
