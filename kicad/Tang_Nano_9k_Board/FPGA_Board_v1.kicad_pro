@@ -266,7 +266,9 @@
       "version": 3
     },
     "net_colors": null,
-    "netclass_assignments": null,
+    "netclass_assignments": {
+      "unconnected-(U3-O1-Pad18)": "D0"
+    },
     "netclass_patterns": []
   },
   "pcbnew": {
@@ -385,7 +387,7 @@
   "sheets": [
     [
       "f0767a77-3b7a-4b3b-babb-01143d44a1e1",
-      "Root"
+      "ルート"
     ]
   ],
   "text_variables": {}
