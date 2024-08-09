@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "yuma_bf")(type "KiCad")(uri "C:/Users/riku2/Desktop/burei/bf-cpu/kicad/symbols/yuma_bf.kicad_sym")(options "")(descr ""))
+)
