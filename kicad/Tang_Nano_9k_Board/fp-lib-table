@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Library")(type "KiCad")(uri "C:/Users/riku2/Desktop/burei/bf-cpu/kicad/footprint/Library.pretty")(options "")(descr ""))
+  (lib (name "BFP")(type "KiCad")(uri "C:/Users/riku2/Desktop/burei/bf-cpu/kicad/footprint/BFP.pretty")(options "")(descr ""))
+  (lib (name "BFP_footprint")(type "KiCad")(uri "C:/Users/riku2/Desktop/burei/bf-cpu/kicad/footprint/BFP_footprint.pretty")(options "")(descr ""))
+)
