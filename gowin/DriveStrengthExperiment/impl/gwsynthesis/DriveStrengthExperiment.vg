@@ -1,0 +1,29 @@
+//
+//Written by GowinSynthesis
+//Tool Version "V1.9.10 (64-bit)"
+//Wed Aug  7 18:15:07 2024
+
+//Source file index table:
+//file0 "\C:/Users/rffkm/WorkSpace/BF/gowin/DriveStrengthExperiment/src/DriveStregthTst.v"
+`timescale 100 ps/100 ps
+module main (
+  odata
+)
+;
+output odata;
+wire VCC;
+wire GND;
+  OBUF odata_obuf (
+    .O(odata),
+    .I(GND) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* main */

@@ -1,0 +1,29 @@
+Reading netlist file: "C:\Users\rffkm\WorkSpace\BF\gowin\LEDblink\impl\gwsynthesis\LEDblink.vg"
+Parsing netlist file "C:\Users\rffkm\WorkSpace\BF\gowin\LEDblink\impl\gwsynthesis\LEDblink.vg" completed
+Processing netlist completed
+Reading constraint file: "C:\Users\rffkm\WorkSpace\BF\gowin\LEDblink\src\LEDblink.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "C:\Users\rffkm\WorkSpace\BF\gowin\LEDblink\impl\pnr\LEDblink.power.html" completed
+Generate file "C:\Users\rffkm\WorkSpace\BF\gowin\LEDblink\impl\pnr\LEDblink.pin.html" completed
+Generate file "C:\Users\rffkm\WorkSpace\BF\gowin\LEDblink\impl\pnr\LEDblink.rpt.html" completed
+Generate file "C:\Users\rffkm\WorkSpace\BF\gowin\LEDblink\impl\pnr\LEDblink.rpt.txt" completed
+Generate file "C:\Users\rffkm\WorkSpace\BF\gowin\LEDblink\impl\pnr\LEDblink.tr.html" completed
+Mon Aug  5 17:51:28 2024
+
