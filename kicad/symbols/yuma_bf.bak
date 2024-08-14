@@ -49,7 +49,7 @@
 				(hide yes)
 			)
 		)
-		(symbol "OSL641501-BRA_0_1"
+		(symbol "OSL641501-BRA_1_1"
 			(rectangle
 				(start -8.89 10.16)
 				(end 8.89 -10.16)
@@ -58,11 +58,9 @@
 					(type default)
 				)
 				(fill
-					(type none)
+					(type background)
 				)
 			)
-		)
-		(symbol "OSL641501-BRA_1_1"
 			(text "OSL641501-BRA"
 				(at 0 11.43 0)
 				(effects
