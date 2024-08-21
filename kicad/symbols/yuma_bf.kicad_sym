@@ -2114,7 +2114,7 @@
 			)
 		)
 	)
-	(symbol "Tang_Nano_9k"
+	(symbol "Tang_Nano_9K"
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -2161,7 +2161,7 @@
 				(hide yes)
 			)
 		)
-		(symbol "Tang_Nano_9k_1_1"
+		(symbol "Tang_Nano_9K_1_1"
 			(rectangle
 				(start -10.16 29.21)
 				(end 10.16 -31.75)
@@ -2173,7 +2173,7 @@
 					(type background)
 				)
 			)
-			(text "Tang Nano 9k"
+			(text "Tang Nano 9K"
 				(at 0.508 31.242 0)
 				(effects
 					(font
