@@ -479,7 +479,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "../../../../../../../Program Files/KiCad/8.0/",
-      "plot": "",
+      "plot": "gov/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
