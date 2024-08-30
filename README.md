@@ -14,4 +14,4 @@ Brainf\*\*kを実行する自作CPUを作成しています。
 
 # 謝辞
 
-このプロジェクトは2024年6月から(サイボウズ・ラボユース](https://labs.cybozu.co.jp/youth.html)の支援を受けて開発しています。
+このプロジェクトは2024年6月から[サイボウズ・ラボユース](https://labs.cybozu.co.jp/youth.html)の支援を受けて開発しています。
