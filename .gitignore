@@ -33,3 +33,12 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+
+
+# Gowin files
+*.gprj.user
+
+# Gowin directory
+gwsynthesis/
+pnr/
+temp/
