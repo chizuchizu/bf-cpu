@@ -2,7 +2,8 @@
 
 ## ボードを作ろうとした目的
 
-Tang Nano 9Kのテストをするとき、入出力用の回路を毎回組むのは面倒なので、Tang Nano 9Kを差し込むだけでそれらの機能が使えるようなボードを作成することにした。
+BF CPUをFPGA(Tang Nano 9K)に実装するときに、動作を検証する必要がある。
+そのときに毎回入出力用の回路を組むのは手間なので、Tang Nano 9Kを差し込むだけでIO機能が使えるようなボードを作成することにした。
 
 ## 部品一覧
 
@@ -25,13 +26,13 @@ Tang Nano 9Kのテストをするとき、入出力用の回路を毎回組む�
 
 全体の回路図は下の図のとおりである。
 
-[![Image from Gyazo](https://i.gyazo.com/690e560d462d991d84030a6d0e54056e.png)](https://gyazo.com/690e560d462d991d84030a6d0e54056e)
+![全体の回路図](./imgs/Whole_Schematic.png)
 
 ### 1. Tang Nano 9K
 高価な部品のため、はんだ付けするのはピンソケットだけにし、そこにTang Nano 9K を差し込む形にする。
 
 ### 2. マトリクスLED制御回路
-[![Image from Gyazo](https://i.gyazo.com/099b2a6294d3a8672e492422bf363784.png)](https://gyazo.com/099b2a6294d3a8672e492422bf363784)
+![マトリクスLED制御回路](./imgs/MatrixLED_Scematic.png)
 
 #### マトリクスLED導入の目的
 用途はテスト時の出力のである。CPUを扱う場合、レジスタの値などを出力することが多くなるため、少ないピンで大量の情報を出力できる8×8ドットマトリクスLEDを出力機器に選択した。
@@ -120,15 +121,7 @@ Tang Nano 9Kには各ピンの駆動電流を制御する機能がある。よ�
 抵抗値決定のために、LEDの降下電圧を知る必要がある。MOSFETの降下電圧は非常に小さいため考慮しない。
 データシート上だと、20mAのときの降下電圧(2.1V)しかわからなかったため、マトリクスLEDの降下電圧についての実験を行った。
 
-実験方法
-マトリクスLEDの中の一つのLEDを点灯させる。VCC、LED、抵抗R、GNDの順につなぎ、抵抗Rの
-
-実験結果
-|抵抗(Ω)|抵抗間電圧(V)|降下電圧(V)|電流値(mA)|
-|:--|:--|:--|:--|
-|592|1.480|1.820|2.5|
-|740|1.494|1.806|2.0|
-|985|1.507|1.793|1.5|
+[実験の詳細](./Exp_MatrixLED_Voltage_Drop.md)
 
 マトリクスLEDの降下電圧は2.0mA付近だと1.8Vほどである。
 これをもとに電流値が2.0mAになる抵抗値を計算すると、
@@ -149,7 +142,7 @@ $$
 
 ### 3. 入力回路
 
-[![Image from Gyazo](https://i.gyazo.com/0dc8c839f610943cc8e21011ae14ea30.png)](https://gyazo.com/0dc8c839f610943cc8e21011ae14ea30)
+![入力回路](./imgs/IO_Schematic.png)
 
 3つのプッシュスイッチと1つのDIPスイッチをテスト時の入力として採用した。
 
@@ -163,20 +156,20 @@ DIPスイッチについては安価なものを選んだ。
 
 ### 4. 補助ピン
 
-[![Image from Gyazo](https://i.gyazo.com/b01b54d2660cc22070691a9441de0be3.png)](https://gyazo.com/b01b54d2660cc22070691a9441de0be3)
+![補助ピン](./imgs/IO_Schematic.png)
 
 デバッグ時にTang Nano 9Kのピンをブレッドボードなどを使わずに分岐できるように、内部でそれぞれのピンを繋げたピンソケットを複数配置した。1つはGNDに接地させている。
 GNDに接地したピンは電圧を測定するときや、外部でICのテストをするときに役立つ。
 
 ### 5. USBシリアル変換モジュール
 
-[![Image from Gyazo](https://i.gyazo.com/7672853f759d83c9fda6044569fee36b.png)](https://gyazo.com/7672853f759d83c9fda6044569fee36b)
+![USBシリアル変換モジュール](./imgs/USBConvertModule_Schematic.png)
 
 FPGAに自作CPU向けの機械語を書き込むためのラインを用意した。これは、Windowsを使うときに、Windows本体とWSLでI/Oを共有できないときに役に立つ。今時点ではTang Nano 9KのUSB-Cポート1つで十分なので、実装できるようにピンだけ用意しておき、必要になったときに変換モジュールを差し込むようにする。
 
 ## 基板の設計意図
 
-[![Image from Gyazo](https://i.gyazo.com/9a5765c7ac94786c0c2ea93e7b5212e1.png)](https://gyazo.com/9a5765c7ac94786c0c2ea93e7b5212e1)
+![PCB基板](./imgs/PCB_Board.png)
 
 部品配置において考えたこと
 - 抵抗に被さらないように部品配置をした
