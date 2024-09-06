@@ -5,10 +5,10 @@ module dynamicMatrixLED (
     output reg [7:0] col
 );
 
-reg [32:0] counter;
+reg [31:0] counter;
 
 always @(posedge sys_clock) begin
-    if (counter < 32'd26999998) begin
+    if (counter < 32'd33750) begin
         counter <= counter + 1'b1;
     end else begin
         counter <= 32'd0;
@@ -16,17 +16,12 @@ always @(posedge sys_clock) begin
 end
 
 always @(posedge sys_clock) begin
-    if (counter == 32'd26999998) begin
-        
-        if(row < 3'd5) begin
-            row <= row + 1'b1;
-        end else begin
-            row <= 3'd0;
-        end
+    if (counter == 32'd33750) begin
 
-        col[7:0] <= LEDdata[row][7:0];
+        row <= row + 3'd1;
+
+        col[7:0] <= LEDdata[row + 3'd1][7:0];
     end
-    $display("%d, $d", counter, row);
 end
 
 endmodule
