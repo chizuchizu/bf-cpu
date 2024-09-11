@@ -32,7 +32,7 @@ initial begin
 end
 
 always @(posedge sys_clock) begin
-    if (counter < 32'd2700000) begin
+    if (counter < 32'd2700000) begin  // 10Hz
         counter <= counter + 1'b1;
     end else begin
         counter <= 32'd0;
@@ -40,10 +40,11 @@ always @(posedge sys_clock) begin
 end
 
 always @(posedge sys_clock) begin
-    if (counter == 32'd2700000) begin
+    if (counter == 32'd2700000) begin  // 10Hz
 
         integer i;
         for(i = 0; i < 8; i = i + 1) begin
+            // sift to the left
             LEDdata[i] <= {LEDdata[i][6:0],LEDdata[i][7]};
         end
         
