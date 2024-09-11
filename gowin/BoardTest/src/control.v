@@ -1,5 +1,7 @@
 module top (
     input wire sys_clock,
+    input reg [7:0] dip_sw,
+    input reg [2:0] push_sw,
     output reg [2:0] row,
     output reg [7:0] col
 );
