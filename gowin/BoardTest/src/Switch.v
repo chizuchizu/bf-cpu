@@ -5,7 +5,7 @@ module switch (
 );
 
 reg [7:0] div_clk;
-reg [2:0] counter;
+reg [3:0] counter;
 
 always @(posedge sys_clock) begin
     div_clk <= div_clk + 8'b1;
@@ -15,24 +15,18 @@ always @(posedge sys_clock) begin
     if(div_clk == 8'd255) begin
         if(switch_out) begin
             if(switch_in) begin
-                counter <= counter + 3'b1;
-                /*if(counter == 3'd7) begin
-                    switch_out  <= ~switch_out;
-                end*/
+                counter <= counter + 4'b1;
             end else begin
-                counter <= 3'b0;
+                counter <= 4'b0;
             end
         end else begin
             if(~switch_in) begin
-                counter <= counter + 3'b1;
-                /*if (counter == 3'd7) begin
-                    switch_out <= ~switch_out;
-                end*/
+                counter <= counter + 4'b1;
             end else begin
-                counter <= 3'b0;
+                counter <= 4'b0;
             end
         end
-        if (counter == 3'd7) begin
+        if (counter == 4'd15) begin
             switch_out <= ~switch_out;
         end
     end
