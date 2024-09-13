@@ -1,8 +1,8 @@
 module switch (
-    input sys_clock;
-    input switch_in;
-    output reg switch_out; 
-)
+    input sys_clock,
+    input switch_in,
+    output reg switch_out 
+);
 
 reg [7:0] div_clk;
 reg [2:0] counter;
