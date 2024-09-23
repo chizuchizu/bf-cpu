@@ -1,10 +1,10 @@
 module counter(
     input sys_clk,
     input rst,
-    output [8:0] out
+    output [7:0] out
 );
 
-reg [8:0] count;
+reg [7:0] count;
 
 assign out = count;
 
