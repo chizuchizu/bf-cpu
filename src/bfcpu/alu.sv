@@ -20,9 +20,9 @@ begin
   if (nochange) begin
     alu = a;
   end else if(decrement) begin 
-    alu = a - {WIDTH{1'd1}};
+    alu = a - 1;
   end else if (increment) begin
-    alu = a + {WIDTH{1'd1}};
+    alu = a + 1;
   end
 end
 endfunction

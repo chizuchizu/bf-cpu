@@ -9,7 +9,7 @@ logic [7:0] out;
 alu alu(.*);
 
 initial begin
-  $monitor("%d: a=%04x cond=$d %d $d out=%04x",
+  $monitor("%d: a=%04x cond=%d %d %d out=%04x",
            $time, a, nochange, decrement, increment, out);
 
   a = 8'hAD;
