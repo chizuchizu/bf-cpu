@@ -5,3 +5,5 @@ module 74HC08(
 );s
 
 assign out = in1 & in2;
+
+endmodule
