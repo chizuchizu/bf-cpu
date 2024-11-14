@@ -3,7 +3,8 @@ BIN = \
         74HC02.out \
         74HC04.out \
         74HC08.out \
-        74HC32.out
+        74HC32.out \
+        74HC74.out 
 
 all: $(BIN)
 
@@ -33,4 +34,9 @@ clean:
 74HC32.out: \
 		74HC32.sv \
 		74HC32_tb.sv
+	iverilog -g2012 -o $@ $^
+
+74HC74.out: \
+		74HC74.sv \
+		74HC74_tb.sv
 	iverilog -g2012 -o $@ $^
