@@ -1,6 +1,6 @@
-module 74HC02(
-    input [3:0] in1
-    input [3:0] in2
+module _74HC02(
+    input [3:0] in1,
+    input [3:0] in2,
     output [3:0] out
 );
 
