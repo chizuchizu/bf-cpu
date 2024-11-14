@@ -1,7 +1,7 @@
-module 74HC04(
-    input [5:0] in
+module _74HC04(
+    input [5:0] in,
     output [5:0] out
-)
+);
 
-    assign out = ~in
+    assign out = ~in;
 endmodule
