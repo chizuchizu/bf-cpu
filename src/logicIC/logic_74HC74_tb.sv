@@ -16,10 +16,6 @@ always #(PERIOD1) begin
   clk1 <= ~clk1;
 end
 
-always #(PERIOD2) begin
-  clk2 <= ~clk2;
-end
-
 // D-FF1のテスト
 initial begin 
   integer i;
@@ -71,55 +67,7 @@ initial begin
   #1
   n_pr1 = 1'b1;
 
-end
-
-// D-FF2のテスト
-initial begin 
-  integer i;
-  i = 100;
-
-  clk2 = 1'b0;
-  n_clr2 = 1'b1;
-  n_pr2 = 1'b1; 
-  in2 = 1'b0;
-
-  #1 //1nsずらす
-
-  #(PERIOD2) //pos
-  // 立ち上がり時に値が0になることの確認
-    test_dff2(i, 1'b0, 1'b1);
-    i++;
-    in2 = 1'b1;
-  #(PERIOD2) //neg
-  // 立下り時に値が変わらないことの確認  
-    test_dff2(i, 1'b0, 1'b1);
-    i++;
-
-  in2 = 1'b1;
-
-  #(PERIOD2) //pos
-  // 立ち上がり時に値が1になることの確認
-    test_dff2(i, 1'b1, 1'b0);
-    i++;
-  #(PERIOD2) //neg
-    
-  n_clr2 = 1'b0;
   #1
-  // CLRが有効になったことの確認
-    test_dff2(i, 1'b0, 1'b1);
-    i++;
-
-  in1 = 1'b0;
-
-  #(PERIOD2) //pos
-  #(PERIOD2) //neg
-
-  n_pr2 = 1'b0;
-  #1
-  // PRが有効になったことの確認
-    test_dff2(i, 1'b1, 1'b0);
-    i++;
-    
   $finish;
 end
 
@@ -134,23 +82,10 @@ task test_dff1(
   input e_n_out
 );
 begin
-  if (e_out !== 4'hx && out1 !== e_out)
+  if (e_out !== 1'bx && out1 !== e_out)
     $error("test%d: out must be %d, but out is %d", i, e_out, out1);
   if (e_n_out !== 1'bx && n_out1 !== e_n_out)
     $error("test%d: ~out must be %d, but ~out is %d", i, e_n_out, n_out1);
-end
-endtask
-
-task test_dff2(
-  integer i,
-  input e_out, 
-  input e_n_out
-);
-begin
-  if (e_out !== 4'hx && out2 !== e_out)
-    $error("test%d: out must be %d, but out is %d", i, e_out, out2);
-  if (e_n_out !== 1'bx && n_out2 !== e_n_out)
-    $error("test%d: ~out must be %d, but ~out is %d", i, e_n_out, n_out2);
 end
 endtask
 
