@@ -42,3 +42,7 @@ fp-info-cache
 gwsynthesis/
 pnr/
 temp/
+
+# verilog testbench
+*.out
+*.vcd
