@@ -37,6 +37,6 @@ logic_74HC32.out: \
 	iverilog -g2012 -o $@ $^
 
 logic_74HClogic_74.out: \
-		logic_74HClogic_74.sv \
-		logic_74HClogic_74_tb.sv
+		logic_74HC74.sv \
+		logic_74HC_tb.sv
 	iverilog -g2012 -o $@ $^
