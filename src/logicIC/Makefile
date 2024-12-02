@@ -4,7 +4,7 @@ BIN = \
         logic_74HC04.out \
         logic_74HC08.out \
         logic_74HC32.out \
-        logic_74HClogic_74.out 
+        logic_74HC74.out 
 
 all: $(BIN)
 
@@ -36,7 +36,7 @@ logic_74HC32.out: \
 		logic_74HC32_tb.sv
 	iverilog -g2012 -o $@ $^
 
-logic_74HClogic_74.out: \
+logic_74HC74.out: \
 		logic_74HC74.sv \
-		logic_74HC_tb.sv
+		logic_74HC74_tb.sv
 	iverilog -g2012 -o $@ $^
