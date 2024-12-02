@@ -1,42 +1,42 @@
 BIN = \
-        74HC00.out \
-        74HC02.out \
-        74HC04.out \
-        74HC08.out \
-        74HC32.out \
-        74HC74.out 
+        logic_74HC00.out \
+        logic_74HC02.out \
+        logic_74HC04.out \
+        logic_74HC08.out \
+        logic_74HC32.out \
+        logic_74HClogic_74.out 
 
 all: $(BIN)
 
 clean:
 	rm -f $(BIN) *.out *.vcd
 
-74HC00.out: \
-		74HC00.sv \
-		74HC00_tb.sv
+logic_74HC00.out: \
+		logic_74HC00.sv \
+		logic_74HC00_tb.sv
 	iverilog -g2012 -o $@ $^
 
-74HC02.out: \
-		74HC02.sv \
-		74HC02_tb.sv
+logic_74HC02.out: \
+		logic_74HC02.sv \
+		logic_74HC02_tb.sv
 	iverilog -g2012 -o $@ $^
 
-74HC04.out: \
-		74HC04.sv \
-		74HC04_tb.sv
+logic_74HC04.out: \
+		logic_74HC04.sv \
+		logic_74HC04_tb.sv
 	iverilog -g2012 -o $@ $^
 
-74HC08.out: \
-		74HC08.sv \
-		74HC08_tb.sv
+logic_74HC08.out: \
+		logic_74HC08.sv \
+		logic_74HC08_tb.sv
 	iverilog -g2012 -o $@ $^
 
-74HC32.out: \
-		74HC32.sv \
-		74HC32_tb.sv
+logic_74HC32.out: \
+		logic_74HC32.sv \
+		logic_74HC32_tb.sv
 	iverilog -g2012 -o $@ $^
 
-74HC74.out: \
-		74HC74.sv \
-		74HC74_tb.sv
+logic_74HClogic_74.out: \
+		logic_74HClogic_74.sv \
+		logic_74HClogic_74_tb.sv
 	iverilog -g2012 -o $@ $^

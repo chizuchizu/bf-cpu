@@ -1,4 +1,4 @@
-module _74HC04(
+module logic_74HC04(
     input [5:0] in,
     output [5:0] out
 );

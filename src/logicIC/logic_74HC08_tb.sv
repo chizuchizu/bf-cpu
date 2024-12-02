@@ -1,34 +1,34 @@
-module _74HC32_tb();
+module logic_74HC08_tb();
 
 reg [3:0] in1;
 reg [3:0] in2;
 wire [3:0] out;
 
-_74HC32 or_instance(
+logic_74HC08 logic_74HC08_instance(
     .in1,
     .in2, 
     .out
 );
 
 initial begin
-    $dumpfile("74HC32.vcd");
-    $dumpvars(1, _74HC32_tb);
+    $dumpfile("logic_74HC08.vcd");
+    $dumpvars(1, logic_74HC08_tb);
 
     in1 = 4'b0011;
     in2 = 4'b0101;
-    test_out(4'b0111);
+    test_out(4'b0001);
 
     #5 in1 = 4'b1001;
        in2 = 4'b1010;
-    #5 test_out(4'b1011);
+    #5 test_out(4'b1000);
 
     #5 in1 = 4'b1100;
        in2 = 4'b0101;
-    #5 test_out(4'b1101);
+    #5 test_out(4'b0100);
 
     #5 in1 = 4'b0110;
        in2 = 4'b1010;
-    #5 test_out(4'b1110);
+    #5 test_out(4'b0010);
 
     #5 $finish;
 end

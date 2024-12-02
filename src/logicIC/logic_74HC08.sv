@@ -1,4 +1,4 @@
-module _74HC08(
+module logic_74HC08(
     input [3:0] in1,
     input [3:0] in2,
     output [3:0] out 

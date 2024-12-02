@@ -1,4 +1,4 @@
-module _74HC74(
+module logic_74HC74(
     input n_clr1,
     input n_pr1,
     input clk1,

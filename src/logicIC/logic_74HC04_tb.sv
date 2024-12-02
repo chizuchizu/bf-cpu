@@ -1,16 +1,16 @@
-module _74HC04_tb();
+module logic_74HC04_tb();
 
 reg [5:0] in;
 wire [5:0] out;
 
-_74HC04 not_instance(
+logic_74HC04 logic_74HC04_instance(
     .in,
     .out
 );
 
 initial begin
-    $dumpfile("74HC04.vcd");
-    $dumpvars(1, _74HC04_tb);
+    $dumpfile("logic_74HC04.vcd");
+    $dumpvars(1, logic_74HC04_tb);
 
     in =6'b010101;
     test_out(6'b101010);

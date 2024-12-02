@@ -1,4 +1,4 @@
-module 74HC161(
+module logic_74HC161(
     input clk,
     input n_rst,
     input n_ld,

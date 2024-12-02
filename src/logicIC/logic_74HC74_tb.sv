@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module _74HC74_tb ();
+module logic_74HC74_tb ();
 
 parameter PERIOD1 = 1000;
 parameter PERIOD2 = 1500;
@@ -8,7 +8,7 @@ parameter PERIOD2 = 1500;
 reg n_clr1, n_clr2, n_pr1, n_pr2, clk1, clk2, in1, in2;
 wire out1, n_out1, out2, n_out2;
 
-_74HC74 _74HC74_test(
+logic_74HC74 logic_74HC74_instance(
   .*
 );
 
@@ -124,8 +124,8 @@ initial begin
 end
 
 initial begin
-    $dumpfile("74HC74.vcd");
-    $dumpvars(0, _74HC74_test);
+    $dumpfile("logic_74HC74.vcd");
+    $dumpvars(0, logic_74HC74_tb);
 end
 
 task test_dff1(
