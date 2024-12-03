@@ -2,8 +2,7 @@
 
 module logic_74HC74_tb ();
 
-parameter PERIOD1 = 1000;
-parameter PERIOD2 = 1500;
+parameter PERIOD1 = 10;
 
 reg n_clr1, n_clr2, n_pr1, n_pr2, clk1, clk2, in1, in2;
 wire out1, n_out1, out2, n_out2;
