@@ -21,7 +21,7 @@ initial begin
 
     a_in = 4'b0000;
     b_in = 4'b0000;
-    c_in = 1'b0000;
+    c_in = 1'b0;
     #0  test_out(4'b0000, 1'b0);
 
     #10 a_in = 4'b1111;
@@ -47,8 +47,8 @@ task test_out(
     input c_ans
 );
 begin
-    if (sum_out != sum_ans) $error("sum_output must be %b but output is %b", ans, out);
-    if (c_out != c_ans) $error("c_output must be %b but output is %b", ans, out);
+    if (sum_out != sum_ans) $error("sum_output must be %b but output is %b", sum_ans, sum_out);
+    if (c_out != c_ans) $error("c_output must be %b but output is %b", c_ans, c_out);
 end
 endtask
 
