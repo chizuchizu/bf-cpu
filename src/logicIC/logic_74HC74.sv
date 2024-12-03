@@ -20,8 +20,8 @@ reg reg2;
 assign out1 = reg1 & n_clr1 | ~n_pr1; 
 assign out2 = reg2 & n_clr2 | ~n_pr2;
 
-assign n_out1 = ~out1;
-assign n_out2 = ~out2;
+assign n_out1 = ~reg1 * n_pr1 + ~n_clr1; 
+assign n_out2 = ~reg2 * n_pr2 + ~n_clr2; 
 
 always @(posedge clk1) begin
     reg1 <= in1;
