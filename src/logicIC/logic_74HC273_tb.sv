@@ -22,7 +22,7 @@ initial begin
     n_clr = 1'b1;
     in = 8'b00000000;
 
-    #0
+    #1
 
     #(PERIOD) // positive edge
         // 値がinと同じになっているか確認
@@ -60,8 +60,6 @@ initial begin
         // 立ち上がり時に値が更新されるか確認
         test_dff(8'b11111111);
 
-    #0
-
     $finish;
 end
 
@@ -71,11 +69,11 @@ initial begin
 end
 
 task test_dff(
-    input e_out, 
+    input e_out
 );
 begin
-    if (e_out !== 1'bx && out1 !== e_out)
-        $error("%t: out must be %d, but out is %d", $time, e_out, out1);
+    if (e_out !== 1'bx && out !== e_out)
+        $error("%t: out must be %d, but out is %d", $time, e_out, out);
 end
 endtask
 
