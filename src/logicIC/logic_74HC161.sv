@@ -10,7 +10,7 @@ module logic_74HC161(
     output co
 );
 
-reg [3:0] count;
+/*reg [3:0] count;
 
 assign out = count; //if n_clr == 0 then out <= 4'0000
 assign co = ent & count[0] & count[1] & count[2] & count[3] //carry = ent * A * B * C * D
@@ -26,6 +26,6 @@ always @(posedge clk or negedge n_rst) begin
         end
     end
     
-end
+end*/
 
 endmodule

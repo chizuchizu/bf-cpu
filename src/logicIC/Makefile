@@ -6,7 +6,8 @@ BIN = \
         logic_74HC32.out \
         logic_74HC74.out \
         logic_74HC283.out \
-        logic_74HC273.out 
+        logic_74HC161.out \
+				logic_74HC273.out
 
 all: $(BIN)
 
@@ -53,6 +54,11 @@ logic_74HC273.out: \
 		logic_74HC273_tb.sv
 	iverilog -g2012 -o $@ $^
 
+logic_74HC161.out: \
+		logic_74HC161.sv \
+		logic_74HC161_tb.sv
+	iverilog -g2012 -o $@ $^
+
 testall: 
 	./logic_74HC00.out
 	./logic_74HC02.out
@@ -62,3 +68,4 @@ testall:
 	./logic_74HC74.out
 	./logic_74HC283.out
 	./logic_74HC273.out
+	./logic_74HC161.out
