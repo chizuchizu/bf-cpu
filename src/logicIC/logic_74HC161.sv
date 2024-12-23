@@ -10,22 +10,23 @@ module logic_74HC161(
     output co
 );
 
-/*reg [3:0] count;
+reg [3:0] count;
+
 
 assign out = count; //if n_clr == 0 then out <= 4'0000
-assign co = ent & count[0] & count[1] & count[2] & count[3] //carry = ent * A * B * C * D
+assign co = ent & count[0] & count[1] & count[2] & count[3]; //carry = ent * A * B * C * D
 
-always @(posedge clk or negedge n_rst) begin
+always @(posedge clk, negedge n_rst) begin
     if(~n_rst) begin
         count <= 4'd0;
     end else if(~n_ld) begin
         count <= in;
     end else begin
         if(ent & enp) begin
-            count <= count + 4'd1;
+            count <= count + 4'b0001;
         end
     end
     
-end*/
+end
 
 endmodule
