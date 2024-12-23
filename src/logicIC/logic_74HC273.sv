@@ -5,4 +5,12 @@ module logic_74HC273(
     output [7:0] out
 );
 
+reg [7:0] reg_d;
+
+assign out = reg_d;
+
+always @(posedge clk, n_clr) begin
+    reg_d <= in & {8{n_clr}};
+end
+
 endmodule
