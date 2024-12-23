@@ -9,7 +9,7 @@ reg [7:0] reg_d;
 
 assign out = reg_d;
 
-always @(posedge clk, n_clr) begin
+always @(posedge clk, negedge n_clr) begin
     reg_d <= in & {8{n_clr}};
 end
 
