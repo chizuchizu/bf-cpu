@@ -19,11 +19,12 @@ always #(PERIOD) begin
 end
 
 initial begin
-  $dumpfile("logi_74HC161.vcd");
+  $dumpfile("logic_74HC161.vcd");
   $dumpvars(0, logic_74HC161_tb);
 end
 
 initial begin
+    clk <= 1'b0;
     n_rst <= 1'b1;
     n_ld <= 1'b1;
     enp <= 1'b0;
@@ -43,6 +44,7 @@ initial begin
   
   #PERIOD // negative edge
 
+    n_rst <= 1'b1;
     enp <= 1'b1;
     ent <= 1'b1;
 
