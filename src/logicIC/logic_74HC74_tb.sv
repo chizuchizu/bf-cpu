@@ -20,23 +20,34 @@ initial begin
   clk1 = 1'b0;
   n_clr1 = 1'b1;
   n_pr1 = 1'b1; 
-  in1 = 1'b0;
+  in1 = 1'b1;
  
   #1 //1nsずらす
 
-  #(PERIOD1) //pos
-  // 立ち上がり時に値が0になることの確認
+  n_clr1 = 1'b0;
+  #1
+  n_clr1 = 1'b1;
+  #1
+  // 初期化ができるか確認
     test_dff1( 1'b0, 1'b1);
-    in1 = 1'b1;
-  #(PERIOD1) //neg
-  // 立下り時に値が変わらないことの確認  
-    test_dff1( 1'b0, 1'b1);
-
-  in1 = 1'b1;
 
   #(PERIOD1) //pos
   // 立ち上がり時に値が1になることの確認
     test_dff1( 1'b1, 1'b0);
+    in1 = 1'b0;
+  #(PERIOD1) //neg
+  // 立下り時に値が変わらないことの確認  
+    test_dff1( 1'b1, 1'b0);
+
+  in1 = 1'b0;
+
+  #(PERIOD1) //pos
+  // 立ち上がり時に値が0になることの確認
+    test_dff1( 1'b0, 1'b1);
+  #(PERIOD1) //neg
+
+  in1 = 1'b1;
+  #(PERIOD1) //pos
   #(PERIOD1) //neg
     
   n_clr1 = 1'b0;
