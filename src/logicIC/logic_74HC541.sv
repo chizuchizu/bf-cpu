@@ -5,4 +5,6 @@ module logic_74HC541 (
     output [7:0] out
 );
 
+assign out = (n_g1 | n_g2) ? 8'bzzzzzzzz : in;
+
 endmodule
