@@ -1,5 +1,6 @@
 BIN = \
-        alu.out
+        alu.out \
+        general_register.out
 
 .phony: all clean testall
 
@@ -13,3 +14,5 @@ clean:
 
 testall:
 	./alu.out
+	./general_register.out
+	
