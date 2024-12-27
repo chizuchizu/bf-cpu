@@ -7,7 +7,7 @@ all: %(BIN)
 clean:
 	rm -f $(BIN) *.out *.vcd
 
-%.out: %.sv
+%.out: %.sv %_tb.sv
 	iverilog -g2012 -o $@ $^
 
 testall:
