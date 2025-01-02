@@ -9,7 +9,7 @@ zero_detector zero_detector_instance(
 
 initial begin
 	$dumpfile("zero_detector.vcd");
-	$dumpfile(0, zero_detector_tb);
+	$dumpvars(0, zero_detector_tb);
 end
 
 initial begin

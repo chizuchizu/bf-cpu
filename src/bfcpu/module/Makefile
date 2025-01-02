@@ -16,3 +16,4 @@ clean:
 testall:
 	./alu.out
 	./general_register.out	
+	./zero_detector.out
