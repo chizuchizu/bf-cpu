@@ -1,3 +1,6 @@
+`ifndef ALU
+`define ALU
+
 `include "../logicIC/logic_74HC04.sv"
 `include "../logicIC/logic_74HC08.sv"
 `include "../logicIC/logic_74HC283.sv"
@@ -15,16 +18,16 @@ wire [3:0] and_in1;
 wire [3:0] and_in2;
 wire [3:0] and_out;
 logic_74HC08 logic_74HC08_1(
-    .and_in1,
-    .and_in2,
-    .and_out
+    .in1(and_in1),
+    .in2(and_in2),
+    .out(and_out)
 );
 
 wire [5:0] not_in;
 wire [5:0] not_out;
 logic_74HC04 logic_74HC04_1(
-    .not_in,
-    .not_out
+    .in(not_in),
+    .out(not_out)
 );
 
 wire tri_n_g1;
@@ -32,10 +35,10 @@ wire tri_n_g2;
 wire [7:0] tri_in;
 wire[7:0] tri_out;
 logic_74HC541 logic_74HC541_1(
-    .tri_n_g1,
-    .tri_n_g2,
-    .tri_in,
-    .tri_out
+    .n_g1(tri_n_g1),
+    .n_g2(tri_n_g2),
+    .in(tri_in),
+    .out(tri_out)
 );
 
 wire [3:0] fa1_a_in;
@@ -44,11 +47,11 @@ wire fa1_c_in;
 wire [3:0] fa1_sum_out;
 wire fa1_c_out;
 logic_74HC283 logic_74HC283_1(
-    .fa1_a_in,
-    .fa1_b_in,
-    .fa1_c_in,
-    .fa1_sum_out,
-    .fa1_c_out
+    .a_in(fa1_a_in),
+    .b_in(fa1_b_in),
+    .c_in(fa1_c_in),
+    .sum_out(fa1_sum_out),
+    .c_out(fa1_c_out)
 );
 
 wire [3:0] fa2_a_in;
@@ -57,11 +60,11 @@ wire fa2_c_in;
 wire [3:0] fa2_sum_out;
 wire fa2_c_out;
 logic_74HC283 logic_74HC283_2(
-    .fa2_a_in,
-    .fa2_b_in,
-    .fa2_c_in,
-    .fa2_sum_out,
-    .fa2_c_out
+    .a_in(fa2_a_in),
+    .b_in(fa2_b_in),
+    .c_in(fa2_c_in),
+    .sum_out(fa2_sum_out),
+    .c_out(fa2_c_out)
 );
 
 
@@ -85,7 +88,9 @@ assign fa2_c_in = fa1_c_out; // carry
 
 assign tri_n_g1 = and_out[1];
 assign tri_n_g2 = and_out[1];
-assign tri_in = {fa1_sum_out, fa2_sum_out};
+assign tri_in = {fa2_sum_out, fa1_sum_out};
 
 assign out = tri_out;
 endmodule
+
+`endif
