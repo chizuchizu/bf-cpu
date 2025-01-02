@@ -57,6 +57,14 @@ initial begin
     // 値が代入されることの確認 
     test_dff(8'b11111111);
 
+    in <= 8'b10101110;
+
+  #PERIOD // posedge
+  #PERIOD // negedge
+
+    // 入力通りに出力ができるかの確認 
+    test_dff(8'b10101110);
+
   $finish;
 end
 
