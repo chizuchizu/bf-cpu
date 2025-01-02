@@ -1,4 +1,5 @@
-SUBDIRS = ./logicIC
+SUBDIRS = ./logicIC \
+          ./module
 
 .PHONY: all clean testall $(SUBDIRS)
 all: $(SUBDIRS)
