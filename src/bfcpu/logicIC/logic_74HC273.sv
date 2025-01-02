@@ -1,3 +1,6 @@
+`ifndef LOGIC_74HC273
+`define LOGIC_74HC273
+
 module logic_74HC273(
     input [7:0] in,
     input clk,
@@ -14,3 +17,5 @@ always @(posedge clk, negedge n_clr) begin
 end
 
 endmodule
+
+`endif 

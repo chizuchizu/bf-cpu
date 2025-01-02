@@ -1,3 +1,6 @@
+`ifndef LOGIC_74HC161
+`define LOGIC_74HC161
+
 module logic_74HC161(
     input clk,
     input n_rst,
@@ -30,3 +33,5 @@ always @(posedge clk, negedge n_rst) begin
 end
 
 endmodule
+
+`endif

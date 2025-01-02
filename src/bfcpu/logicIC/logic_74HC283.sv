@@ -1,3 +1,6 @@
+`ifndef LOGIC_74HC283
+`define LOGIC_74HC283
+
 module logic_74HC283(
     input [3:0] a_in,
     input [3:0] b_in,
@@ -11,3 +14,5 @@ module logic_74HC283(
     assign sum_out = sum[3:0];
     assign c_out = sum[4];
 endmodule
+
+`endif

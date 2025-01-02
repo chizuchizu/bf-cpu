@@ -1,3 +1,6 @@
+`ifndef LOGIC_74HC74
+`define LOGIC_74HC74
+
 module logic_74HC74(
     input n_clr1,
     input n_pr1,
@@ -46,3 +49,5 @@ always @(posedge clk2 or negedge n_clr2 or negedge n_pr2) begin
 end
 
 endmodule
+
+`endif

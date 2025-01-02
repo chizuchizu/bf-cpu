@@ -1,3 +1,6 @@
+`ifndef LOGIC_74HC541
+`define LOGIC_74HC541
+
 module logic_74HC541 (
     input n_g1,
     input n_g2,
@@ -8,3 +11,5 @@ module logic_74HC541 (
 assign out = (n_g1 | n_g2) ? 8'bzzzzzzzz : in;
 
 endmodule
+
+`endif

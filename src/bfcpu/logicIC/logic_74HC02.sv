@@ -1,3 +1,6 @@
+`ifndef LOGIC_74HC02
+`define LOGIC_74HC02
+
 module logic_74HC02(
     input [3:0] in1,
     input [3:0] in2,
@@ -6,3 +9,5 @@ module logic_74HC02(
 
     assign out = ~ ( in1 | in2 );
 endmodule
+
+`endif
