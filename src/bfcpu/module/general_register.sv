@@ -9,36 +9,60 @@ module general_register (
   output [7:0] out
 );
 
-wire co;
-
-wire [3:0] in1;
-wire [3:0] out1;
+wire cnt_clk_1;
+wire cnt_n_rst_1;
+wire cnt_n_ld_1;
+wire cnt_enp_1;
+wire cnt_ent_1;
+wire [3:0] cnt_in_1;
+wire [3:0] cnt_out_1;
+wire cnt_co_1;
 logic_74HC161 logic_74HC161_1(
-  .clk,
-  .n_rst(n_clr),
-  .n_ld,
-  .enp(1'b0),
-  .ent(1'b0),
-  .in(in1),
-  .out(out1),
-  .co
+  .clk(cnt_clk_1),
+  .n_rst(cnt_n_clr_1),
+  .n_ld(cnt_n_ld_1),
+  .enp(cnt_enp_1),
+  .ent(cnt_ent_1),
+  .in(cnt_in_1),
+  .out(cnt_out_1),
+  .co(cnt_co_1)
 );
 
-wire [3:0] in2;
-wire [3:0] out2;
+wire cnt_clk_2;
+wire cnt_n_rst_2;
+wire cnt_n_ld_2;
+wire cnt_enp_2;
+wire cnt_ent_2;
+wire [3:0] cnt_in_2;
+wire [3:0] cnt_out_2;
+wire cnt_co_2;
 logic_74HC161 logic_74HC161_2(
-  .clk,
-  .n_rst(n_clr),
-  .n_ld,
-  .enp(1'b0),
-  .ent(1'b0),
-  .in(in2),
-  .out(out2),
-  .co
+  .clk(cnt_clk_2),
+  .n_rst(cnt_n_clr_2),
+  .n_ld(cnt_n_ld_2),
+  .enp(cnt_enp_2),
+  .ent(cnt_ent_2),
+  .in(cnt_in_2),
+  .out(cnt_out_2),
+  .co(cnt_co_2)
 );
 
-assign in1 = in[3:0];
-assign in2 = in[7:4];
-assign out = {out2, out1};
+assign cnt_clk_1 = clk;
+assign cnt_clk_2 = clk;
+
+assign cnt_n_clr_1 = n_clr;
+assign cnt_n_clr_2 = n_clr;
+
+assign cnt_n_ld_1 = n_ld;
+assign cnt_n_ld_2 = n_ld;
+
+assign cnt_enp_1 = 1'b0;
+assign cnt_enp_2 = 1'b0;
+assign cnt_ent_1 = 1'b0;
+assign cnt_ent_2 = 1'b0;
+
+assign cnt_in_1 = in[3:0];
+assign cnt_in_2 = in[7:4];
+assign out = {cnt_out_2, cnt_out_1};
 
 endmodule
