@@ -8,7 +8,7 @@ reg clk, n_clr, reg_sp, reg_np, sp_gate;
 reg [7:0] in;
 
 wire [7:0] out;
-wire detect_0;
+wire detect_equal;
 
 stack_pointer stack_pointer(
   .*
@@ -46,14 +46,14 @@ initial begin
   #1
 
   //clrが正常に動作することのテスト
-  test_dff(8'b00000000, 1'b0);
+  test_dff(8'b00000000, 1'b1);
 
   sp_gate <= 1'b1;
 
   #1
 
   //stack pointerのトライステートバッファが正常に動作することのテスト
-  test_dff(8'bzzzzzzzz, 1'b0);
+  test_dff(8'bzzzzzzzz, 1'b1);
 
   #PERIOD //negedge
 
@@ -65,7 +65,7 @@ initial begin
   #PERIOD //negedge
 
   //stack pointerに値が保存されることのテスト
-  test_dff(8'b10101101, 1'b1);
+  test_dff(8'b10101101, 1'b0);
 
   in <= 8'b11100101;
   reg_sp <= 1'b1;
@@ -74,7 +74,7 @@ initial begin
   #PERIOD //negedge
   
   //stack pointer ldが正常に動作することのテスト
-  test_dff(8'b10101101, 1'b1);
+  test_dff(8'b10101101, 1'b0);
 
   reg_np <= 1'b0;
 
@@ -82,7 +82,7 @@ initial begin
   #PERIOD //negedge
   
   //np pointerに値が保存されることのテスト
-  test_dff(8'b10101101, 1'b0);
+  test_dff(8'b10101101, 1'b1);
 
   reg_np <= 1'b1;
 
@@ -91,13 +91,13 @@ end
 
 task test_dff(
   input [7:0] e_out,
-  input e_detect_0
+  input e_detect_equal
 );
 begin
   if(e_out !== 8'bxxxxxxxx && out !== e_out)
     $error("%t: out must be %d, but out is %d", $time, e_out, out);
-  if(e_detect_0 !== 8'bx && detect_0 !== e_detect_0)
-    $error("%t: detect 0 must be %d, but detect 0 is %d", $time, e_detect_0, detect_0);
+  if(e_detect_equal !== 8'bx && detect_equal !== e_detect_equal)
+    $error("%t: detect 0 must be %d, but detect 0 is %d", $time, e_detect_equal, detect_equal);
   end
 endtask
 
