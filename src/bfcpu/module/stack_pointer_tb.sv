@@ -41,6 +41,10 @@ initial begin
 
   #1
 
+  n_clr <= 1'b1;
+
+  #1
+
   //clrが正常に動作することのテスト
   test_dff(8'b00000000, 1'b0);
 
