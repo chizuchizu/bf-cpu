@@ -2,7 +2,8 @@ BIN = \
         alu.out \
         general_register.out \
         zero_detector.out \
-        equal_detector.out
+        equal_detector.out\
+        stack_pointer.out
 
 .phony: all clean testall
 
@@ -19,3 +20,4 @@ testall:
 	./general_register.out	
 	./zero_detector.out
 	./equal_detector.out
+	./stack_pointer.out
