@@ -39,6 +39,8 @@ initial begin
   // クリアが非同期に動作することの確認
   test_dff(8'b00000000);
 
+  rst <= 1'b0;
+
   #PERIOD // negedge
 
   data_in <= 8'b10101010;
