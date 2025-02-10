@@ -137,8 +137,8 @@ initial begin
   #PERIOD //negedge
 
   addr <= 8'b00000001;
-  ce <= 1'b0;
-  wre <= 1'b1;
+  ce <= 1'b1;
+  wre <= 1'b0;
 
   #PERIOD //posedge
   #PERIOD //negedge
@@ -146,8 +146,8 @@ initial begin
   test_dff(8'b00001111);
   
   addr <= 8'b00000000;
-  ce <= 1'b0;
-  wre <= 1'b1;
+  ce <= 1'b1;
+  wre <= 1'b0;
 
   #PERIOD //posedge
   #PERIOD //negedge
