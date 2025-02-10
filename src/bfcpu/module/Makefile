@@ -4,7 +4,8 @@ BIN = \
         zero_detector.out \
         equal_detector.out\
         stack_pointer.out \
-        bram_primitive.out
+        bram_primitive.out \
+        decoder.out
 
 .phony: all clean testall
 
@@ -18,8 +19,9 @@ clean:
 
 testall:
 	./alu.out
-	./general_register.out	
+	./general_register.out
 	./zero_detector.out
 	./equal_detector.out
 	./stack_pointer.out
 	./bram_primitive.out
+	./decoder.out
