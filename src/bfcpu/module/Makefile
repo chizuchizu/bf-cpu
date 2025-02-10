@@ -3,7 +3,8 @@ BIN = \
         general_register.out \
         zero_detector.out \
         equal_detector.out\
-        stack_pointer.out
+        stack_pointer.out \
+        bram_primitive.out
 
 .phony: all clean testall
 
@@ -21,3 +22,4 @@ testall:
 	./zero_detector.out
 	./equal_detector.out
 	./stack_pointer.out
+	./bram_primitive.out
