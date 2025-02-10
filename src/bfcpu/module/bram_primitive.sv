@@ -12,6 +12,23 @@ module bram_primitive(
   output [7:0] data_out
 );
 
+reg [7:0] mem [255:0];
+reg [7:0] data_out;
+
+always@(posedge clk or posedge rst)
+  if(rst) begin
+    data_out <= 0;
+  end else begin
+    if(ce & !wre) begin
+      data_out <= mem[addr];
+    end
+  end
+
+always@(posedge clk)
+  if(ce & wre) begin
+    mem[addr] <= data_in;
+  end
+
 endmodule
 
 `endif
