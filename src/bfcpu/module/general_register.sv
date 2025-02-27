@@ -1,3 +1,6 @@
+`ifndef GENERAL_REGISTER
+`define GENERAL_REGISTER
+
 `include "../logicIC/logic_74HC161.sv"
 
 module general_register (
@@ -66,3 +69,5 @@ assign cnt_in_2 = in[7:4];
 assign out = {cnt_out_2, cnt_out_1};
 
 endmodule
+
+`endif

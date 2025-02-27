@@ -1,3 +1,6 @@
+`ifndef EQUAL_DETECTOR
+`define EQUAL_DETECTOR
+
 `include "../logicIC/logic_74HC04.sv"
 `include "../logicIC/logic_74HC283.sv"
 `include "../logicIC/logic_74HC02.sv"
@@ -91,3 +94,5 @@ assign and_in2[2] = and_out[1];
 assign out = and_out[2];
 
 endmodule
+
+`endif
