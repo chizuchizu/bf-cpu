@@ -5,7 +5,8 @@ BIN = \
         equal_detector.out\
         stack_pointer.out \
         bram_primitive.out \
-        decoder.out
+        decoder.out \
+        asynchronous_ram.out
 
 .phony: all clean testall
 
@@ -25,3 +26,4 @@ testall:
 	./stack_pointer.out
 	./bram_primitive.out
 	./decoder.out
+	./asynchronous_ram.out
