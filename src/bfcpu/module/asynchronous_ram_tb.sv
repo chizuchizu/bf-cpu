@@ -113,6 +113,7 @@ initial begin
   test_dff(8'b00001111); 
 
   ce <= 1'b0; //ceコントロールで書き込み
+  data_in <= 8'bzzzzzzzz;
 
   #PERIOD
   // ce = 0、deselectedなので、= data_in 
