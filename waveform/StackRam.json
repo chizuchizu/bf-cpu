@@ -1,0 +1,24 @@
+{"signal": [
+    {"name":"clk",    "wave": "p........."
+    },
+    {"name":"Address","wave": "3.4...5..."
+    },
+    {"name":"OEn",    "wave": "h......lh."
+    },
+    {"name":"WEn",    "wave": "h..lh....."
+    },
+    {"name":"CEn",    "wave": "l........."
+    },
+    {"name":"RAM mode",   "wave": "3..53..43.", "data": ["Disable", "Dout", "Disable", "Din", "Disable"]
+    },
+    {"name":"I/O",   "wave": "zzzzzzz3zz"
+    },
+    {"name":"PC ld",    "wave": "h......lh."
+    }
+],
+"head": {
+"text":"Stack RAM",
+"tick": 0
+},
+"config": {"hscale": 2}
+}

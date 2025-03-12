@@ -1,0 +1,31 @@
+{
+    "signal": [
+        {"node": "A...B...C..D", "phase": 0.15
+        },
+        {"name":"clk",    "wave": "p........."
+        },
+        {"name":"Addrss", "wave": "3.......4."
+        },
+        {"name":"OEn",    "wave": "hlh..lh..l"
+        },
+        {"name":"WEn",    "wave": "h..lh....."
+        },
+        {"name":"CEn",    "wave": "l........."
+        },
+        {"name":"RAM mode",   "wave": "3435343..4", "data": ["Disable", "Din", "Disable", "Dout", "Disable", "Din", "Disable", "Din"]
+        },
+        {"name":"I/O",   "wave": "z3zzz3zzzz"
+        }
+    ],
+
+    "head": {
+        "text":"Data RAM",
+        "tick": 0
+    },
+    "config": {
+        "hscale": 2
+    },
+    "edge": [
+        "A+B change data", "B+C change address", "C+D change data"
+    ]
+}

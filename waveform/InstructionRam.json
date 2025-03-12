@@ -1,0 +1,23 @@
+{"signal": [
+    {"name":"clk",    "wave": "p........."
+    },
+    {"name":"Address", "wave": "3...4...5."
+    },
+    {"name":"OEn",    "wave": "hlh..lh..l"
+    },
+    {"name":"WEn",    "wave": "h........."
+    },
+    {"name":"CEn",    "wave": "l........."
+    },
+    {"name":"RAM mode",   "wave": "343..43..4", "data": ["Disable", "Din", "Disable", "Din", "Disable", "Din"]
+    },
+    {"name":"I/O",   "wave": "z3zzz3zzzz"
+    },
+    {"name":"PC clk", "wave": "l..hl..hl."}
+],
+"head": {
+"text":"Instruction RAM",
+"tick": 0
+},
+"config": {"hscale": 2}
+}
