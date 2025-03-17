@@ -3,11 +3,11 @@
     },
     {"name":"Address","wave": "3.4...5..."
     },
-    {"name":"OEn",    "wave": "h......lh."
+    {"name":"OEn",    "wave": "1......01."
     },
-    {"name":"WEn",    "wave": "h..lh....."
+    {"name":"WEn",    "wave": "1..01....."
     },
-    {"name":"CEn",    "wave": "l........."
+    {"name":"CEn",    "wave": "0........."
     },
     {"name":"RAM mode",   "wave": "3..53..43.", "data": ["Disable", "Dout", "Disable", "Din", "Disable"]
     },
