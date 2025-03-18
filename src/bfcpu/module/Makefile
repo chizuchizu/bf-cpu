@@ -6,7 +6,8 @@ BIN = \
         stack_pointer.out \
         bram_primitive.out \
         decoder.out \
-        asynchronous_ram.out
+        asynchronous_ram.out \
+        data_ram.out
 
 .phony: all clean testall
 
