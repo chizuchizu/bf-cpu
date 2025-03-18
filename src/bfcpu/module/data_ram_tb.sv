@@ -5,7 +5,7 @@ module data_ram_tb ();
 parameter PERIOD = 10;
 
 reg clk;
-reg n_we, n_oe, n_ce, n_val_gate, n_val_ld, n_clr;
+reg n_we, n_oe, n_val_gate, n_val_ld, n_clr;
 reg [7:0] adr;
 reg [7:0] in;
 wire [7:0] out;
@@ -29,7 +29,6 @@ initial begin
   n_clr <= 1'b1;
   n_we <= 1'b1;
   n_oe <= 1'b1;
-  n_ce <= 1'b0;
   n_val_gate <= 1'b1;
   n_val_ld <= 1'b0; 
   adr <= 8'b00000000;
