@@ -6,7 +6,7 @@ parameter PERIOD = 10;
 
 reg clk;
 reg n_we, n_oe, n_val_gate, n_val_ld, n_clr;
-reg [7:0] adr;
+reg [7:0] addr;
 reg [7:0] in;
 wire [7:0] out;
 wire n_detect_zero;
@@ -31,7 +31,7 @@ initial begin
   n_oe <= 1'b1;
   n_val_gate <= 1'b1;
   n_val_ld <= 1'b0; 
-  adr <= 8'b00000000;
+  addr <= 8'b00000000;
   in <= 8'b00000000;
 
   #1
@@ -48,7 +48,7 @@ initial begin
 
   #1
   // n_val_gate がネゲートされているのでハイインピーダンス
-  test_dff(8'bzzzzzzzz, 1'bx);
+  test_dff(8'bzzzzzzzz, 1'b0);
 
   #PERIOD
   n_we <= 1'b0;
@@ -69,7 +69,7 @@ initial begin
   n_oe <= 1'b1;
 
   #1
-  // adr = 00000000に値が入力されるか確認
+  // addr = 00000000に値が入力されるか確認
   test_dff(8'b00000000, 1'b0);
 
   #PERIOD
@@ -91,7 +91,7 @@ initial begin
   n_oe <= 1'b1;
 
   #1
-  // adr = 0000000の値が更新されるか確認
+  // addr = 0000000の値が更新されるか確認
   test_dff(8'b00000001, 1'b1);
 
   #PERIOD
@@ -104,7 +104,7 @@ initial begin
   n_we <= 1'b1;
   n_val_gate <= 1'b0;
   n_val_ld <= 1'b1;
-  in <= 8'b00000010;
+  in <= 8'b00000011;
   
   #PERIOD
   n_oe <= 1'b0;
@@ -127,7 +127,7 @@ initial begin
   n_val_gate <= 1'b0;
   n_val_ld <= 1'b0;
   in <= 8'b00010000;
-  adr <= 8'b00000001;
+  addr <= 8'b00000001;
 
   #PERIOD
   n_oe <= 1'b0;
@@ -154,8 +154,8 @@ initial begin
   n_oe <= 1'b1;
 
   #1
-  // adr = 00000001に値が入力されるか確認
-  test_dff(8'b00110000, 1'b1);
+  // addr = 00000001に値が入力されるか確認
+  test_dff(8'b00010000, 1'b1);
 
   #PERIOD
   n_we <= 1'b0;
