@@ -4,7 +4,6 @@ module data_ram_tb ();
 
 parameter PERIOD = 10;
 
-reg clk;
 reg n_we, n_oe, n_val_gate, n_val_ld, n_clr;
 reg [7:0] addr;
 reg [7:0] in;
@@ -14,10 +13,6 @@ wire n_detect_zero;
 data_ram data_ram_tb(
   .*
 );
-
-always #(PERIOD + 1) begin
-  clk <= ~clk;
-end
 
 initial begin
   $dumpfile("data_ram.vcd");
