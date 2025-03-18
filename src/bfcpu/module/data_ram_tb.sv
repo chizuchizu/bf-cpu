@@ -170,7 +170,7 @@ task test_dff(
     $error("%t: out must be %b, but out is %b",$time, e_out, out);
   end 
   if(n_detect_zero !== e_n_detect_zero) begin
-    $error("%t: out must be %b, but out is %b",$time, e_n_detect_zero, n_detect_zero);
+    $error("%t: detect zero must be %b, but detect zero is %b",$time, e_n_detect_zero, n_detect_zero);
   end
 
 endtask
