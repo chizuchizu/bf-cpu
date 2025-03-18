@@ -7,7 +7,8 @@ BIN = \
         bram_primitive.out \
         decoder.out \
         asynchronous_ram.out \
-        data_ram.out
+        data_ram.out \
+        address_register.out
 
 .phony: all clean testall
 
@@ -29,3 +30,4 @@ testall:
 	./decoder.out
 	./asynchronous_ram.out
 	./data_ram.out
+	./address_register.out
