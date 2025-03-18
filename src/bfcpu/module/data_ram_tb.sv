@@ -48,7 +48,7 @@ initial begin
 
   #1
   // n_val_gate がネゲートされているのでハイインピーダンス
-  test_dff(8'bzzzzzzzz, 1'b0);
+  test_dff(8'bzzzzzzzz, 1'bx);
 
   #PERIOD
   n_we <= 1'b0;
