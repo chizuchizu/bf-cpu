@@ -9,7 +9,8 @@ BIN = \
         asynchronous_ram.out \
         data_ram.out \
         address_register.out \
-        instruction_ram.out
+        instruction_ram.out \
+        switch.out
 
 .phony: all clean testall
 
