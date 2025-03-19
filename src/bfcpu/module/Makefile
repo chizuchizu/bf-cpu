@@ -8,7 +8,8 @@ BIN = \
         decoder.out \
         asynchronous_ram.out \
         data_ram.out \
-        address_register.out
+        address_register.out \
+        instruction_ram.out
 
 .phony: all clean testall
 
