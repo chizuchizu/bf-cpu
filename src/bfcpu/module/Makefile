@@ -10,7 +10,7 @@ BIN = \
         data_ram.out \
         address_register.out \
         instruction_ram.out \
-        switch.out
+        program_counter.out
 
 .phony: all clean testall
 
