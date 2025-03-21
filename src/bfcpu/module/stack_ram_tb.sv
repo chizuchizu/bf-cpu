@@ -104,8 +104,8 @@ initial begin
   n_we <= 1'b0;
 
   #1
-  // n_pc_ldがアサートされていないとき、値が出力されない(output = in)ことの確認
-  test_dff(8'b00000000);
+  // n_pc_ldがアサートされていないとき、値が出力されない(output = H-Z、output of 3-state-buffer = H-Z)ことの確認
+  test_dff(8'bzzzzzzzz);
 
   #PERIOD
   n_oe <= 1'b1;
