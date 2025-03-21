@@ -30,6 +30,12 @@ initial begin
   n_pc_ld <= 1'b1;
   in <= 8'b00000000;
 
+
+
+  // clk のマニュアル動作の確認
+  #1
+  clk_switch <= 1'b1;
+
   #1
   n_clr <= 1'b0;
 
@@ -38,10 +44,6 @@ initial begin
 
   // n_clr が作動するかの確認
   test_dff(8'b00000000);
-
-  // clk のマニュアル動作の確認
-  #1
-  clk_switch <= 1'b1;
 
   #PERIOD
   clk_manual <= 1'b1;
@@ -65,10 +67,16 @@ initial begin
   #1
   clk_switch <= 1'b0;
 
+  #1
+  n_clr <= 1'b0;
+
+  #1
+  n_clr <= 1'b1;
+
   #PERIOD
   #PERIOD
   // 通常のclkでカウントアップの確認
-  test_dff(8'b00000011); 
+  test_dff(8'b00000001); 
 
   n_pc_ld <= 1'b0;
   in <= 8'b00001111;
