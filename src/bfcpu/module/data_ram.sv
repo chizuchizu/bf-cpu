@@ -86,15 +86,21 @@ zero_detector zero_detector_1(
   .out(zero_detector_out_1)
 );
 
+wire n_data_we;
 
 assign out = logic_74HC541_out_1;
 assign n_detect_zero = zero_detector_out_1; 
+
+assign logic_74HC32_in1_1 = {7'b0000000, n_we} ;
+assign logic_74HC32_in2_1 = {7'b0000000, n_val_ld};
+
+assign n_data_we = logic_74HC32_out_1[0];
 
 assign logic_74HC541_n_g1_1 = n_val_gate;
 assign logic_74HC541_n_g2_1 = 1'b0;
 assign logic_74HC541_in_1 = logic_74HC273_out_1;
 
-assign logic_74HC541_n_g1_2 = n_we;
+assign logic_74HC541_n_g1_2 = n_data_we;
 assign logic_74HC541_n_g2_2 = 1'b0;
 assign logic_74HC541_in_2 = in; 
 
@@ -105,12 +111,10 @@ assign logic_74HC273_n_clr_1 = n_clr;
 assign asynchronous_ram_addr_1 = addr;
 assign asynchronous_ram_ce_1 = 1'b1;
 assign asynchronous_ram_n_ce_1 = 1'b0;
-assign asynchronous_ram_n_we_1 = logic_74HC32_out_1[0];
+assign asynchronous_ram_n_we_1 = n_data_we; 
 assign asynchronous_ram_n_oe_1 = n_oe;
 assign asynchronous_ram_data_inout_1 = logic_74HC541_out_2;
 
-assign logic_74HC32_in1_1 = {7'b0000000, n_we} ;
-assign logic_74HC32_in2_1 = {7'b0000000, n_val_ld};
 
 assign zero_detector_in_1 = logic_74HC273_out_1;
 
