@@ -11,12 +11,14 @@ module divider (
   output quarter_clk
 );
 
+// half_clk
 wire logic_74HC74_n_clr1_1;
 wire logic_74HC74_n_pr1_1;
 wire logic_74HC74_clk1_1;
 wire logic_74HC74_in1_1;
 wire logic_74HC74_out1_1;
 wire logic_74HC74_n_out1_1;
+// quarter_clk
 wire logic_74HC74_n_clr2_1;
 wire logic_74HC74_n_pr2_1;
 wire logic_74HC74_clk2_1;
@@ -41,10 +43,12 @@ logic_74HC74 logic_74HC74_1(
 assign half_clk = logic_74HC74_out1_1;
 assign quarter_clk = logic_74HC74_out2_1;
 
+// half_clk
 assign logic_74HC74_n_clr1_1 = n_clr;
 assign logic_74HC74_n_pr1_1 = 1'b1;
 assign logic_74HC74_clk1_1 = clk;
 assign logic_74HC74_in1_1 = logic_74HC74_n_out1_1;
+// quarter_clk
 assign logic_74HC74_n_clr2_1 = n_clr;
 assign logic_74HC74_n_pr2_1 = 1'b1;
 assign logic_74HC74_clk2_1 = logic_74HC74_out1_1;
