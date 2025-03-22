@@ -38,3 +38,4 @@ testall:
 	./instruction_ram.out
 	./program_counter.out
 	./stack_ram.out
+	./divider.out
