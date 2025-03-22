@@ -12,7 +12,8 @@ BIN = \
         instruction_ram.out \
         program_counter.out \
         stack_ram.out \
-        divider.out
+        divider.out \
+        waveform_generator.out
 
 .phony: all clean testall
 
