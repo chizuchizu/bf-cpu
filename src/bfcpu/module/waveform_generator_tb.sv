@@ -33,11 +33,16 @@ initial begin
   // n_clrが動作するかの確認
   test_dff(1'b1, 1'b1);
 
-  // clk            : __|‾‾|__|‾‾|__|‾‾|__|‾‾|__
+  // clk            : __|‾‾|__|‾‾|__|‾‾|__|‾‾|__|‾‾|__
 
-  // first_waveform : ‾‾|_____|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+  // first_waveform : ‾‾‾‾‾‾‾‾|_____|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
-  // second_waveform: ‾‾‾‾‾‾‾‾‾‾‾‾‾‾|_____|‾‾‾‾‾
+  // second_waveform: ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|_____|‾‾‾‾‾
+
+  #PERIOD //posedge
+  #PERIOD //negedge
+  // first_waveform = 1,  second_waveform = 1 
+  test_dff(1'b1, 1'b1);
 
   #PERIOD //posedge
   #PERIOD //negedge
